@@ -23,3 +23,27 @@ const shadowHeader = () => {
 }
 
 window.addEventListener('scroll', shadowHeader)
+
+
+// EMAIL
+
+const contactForm = document.getElementById('contact-form')
+const contactMessage = document.getElementById('contact-message')
+
+const sendEmail = (e) => {
+  e.preventDefault()
+  emailjs.sendForm('service_23p1027', 'template_9ya3ofl', '#contact-form', 'exvUvInuivIVfq-BP')
+  .then(() => {
+    contactMessage.textContent = 'Message sent successfully. ✅'
+
+    setTimeout(() => {
+      contactMessage.textContent = ''
+    }, 5000);
+
+    contactForm.reset()
+  }, () => {
+    contactMessage.textContent = 'Message not sent (service error) ❌'
+  })
+}
+
+contactForm.addEventListener('submit', sendEmail)
