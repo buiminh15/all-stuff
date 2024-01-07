@@ -15,6 +15,18 @@ if (navClose) {
 }
 
 
+// remove menu mobile
+
+const navLink = document.querySelectorAll('.nav__link')
+const linkAction = () => {
+  const navMenu = document.getElementById('nav-menu')
+  navMenu.classList.remove('show-menu')
+}
+
+navLink.forEach(n => n.addEventListener('click', linkAction))
+
+// add shadow header
+
 const shadowHeader = () => {
   const header = document.getElementById('header')
   this.scrollY >= 50 
@@ -60,22 +72,26 @@ window.addEventListener('scroll', scrollUp)
 
 // scroll sections active link
 const sections = document.querySelectorAll('section[id]')
+
 const scrollActive = () => {
   const scrollDown = window.scrollY
 
   sections.forEach(current => {
-    const sectionHeight = current.offsetHeight
-    const sectionTop = current.offsetTop - 58
-    const sectionId = current.getAttribute('id')
+    const sectionHeight = current.offsetHeight;
+    const sectionTop = current.offsetTop - 58;
+    const sectionId = current.getAttribute('id');
+    console.log('📢 [script.js:85]', sectionId);
     const sectionsClass = document.querySelector('.nav__menu a[href*=' + sectionId + ']')
-
     if (scrollDown > sectionTop && scrollDown <= sectionTop + sectionHeight) {
+
       sectionsClass.classList.add('active-link')
     } else {
       sectionsClass.classList.remove('active-link')
     }
   })
 }
+
+window.addEventListener('scroll', scrollActive)
 
 const themeButton = document.getElementById('theme-button')
 const darkTheme = 'dark-theme'
