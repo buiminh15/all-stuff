@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.5.0/remixicon.css">
 
   <!--=============== SWIPER CSS ===============-->
-  <link rel="stylesheet" href="">
+  <link rel="stylesheet" href="css/swiper-bundle.min.css">
 
   <!--=============== CSS ===============-->
   <link rel="stylesheet" href="/watches/css/styles.css">
@@ -96,19 +96,22 @@
         </div>
 
         <div class="home__images">
-          <div class="home__swiper">
-            <div>
-              <article class="home__article">
+          <div class="home__swiper swiper">
+            <div class="swiper-wrapper">
+              <article class="home__article swiper-slide">
                 <img src="img/watches-1.png" alt="image" class="home__img">
               </article>
-              <article class="home__article">
+              <article class="home__article swiper-slide">
                 <img src="img/watches-2.png" alt="image" class="home__img">
               </article>
-              <article class="home__article">
+              <article class="home__article swiper-slide">
                 <img src="img/watches-3.png" alt="image" class="home__img">
               </article>
             </div>
           </div>
+
+          <!-- If we need pagination -->
+          <div class="swiper-pagination"></div>
         </div>
 
         <div class="home__info">
@@ -131,7 +134,7 @@
   <script src=""></script>
 
   <!--=============== SWIPER JS ===============-->
-  <script src=""></script>
+  <script src="js/swiper-bundle.min.js"></script>
 
   <!--=============== MAIN JS ===============-->
   <script src="/watches/js/main.js"></script>
